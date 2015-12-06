@@ -1,5 +1,5 @@
 defmodule PragProgTest.Ch2.PatternMatching2 do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "Which of the following will match? ([a,b,a] = [1,2,3])" do
     assert_raise MatchError, fn ->

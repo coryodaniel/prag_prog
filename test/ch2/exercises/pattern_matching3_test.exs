@@ -1,5 +1,5 @@
 defmodule PragProgTest.Ch2.PatternMatching3 do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "Which of the following will match?" do
     assert_raise MatchError, fn ->
