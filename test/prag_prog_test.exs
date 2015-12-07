@@ -1,4 +1,4 @@
 require IEx
-defmodule PragProgTest do
+defmodule PragProg do
   use ExUnit.Case
 end

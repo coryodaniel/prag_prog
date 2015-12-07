@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch5.Functions1 do
+defmodule PragProg.Ch5.Functions1 do
   use ExUnit.Case, async: true
 
   test "list_concat" do

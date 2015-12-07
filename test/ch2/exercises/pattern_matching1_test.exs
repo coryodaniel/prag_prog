@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch2.PatternMatching1 do
+defmodule PragProg.Ch2.PatternMatching1 do
   use ExUnit.Case, async: true
 
   test "Which of the following will match? (a = [1,2,3])" do

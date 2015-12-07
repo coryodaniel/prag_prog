@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch5.Functions5 do
+defmodule PragProg.Ch5.Functions5 do
   use ExUnit.Case, async: true
 
   test "rewrite expressions using &" do

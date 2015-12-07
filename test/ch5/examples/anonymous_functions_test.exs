@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch5.AnonymousFunctions do
+defmodule PragProg.Ch5.AnonymousFunctions do
   use ExUnit.Case, async: true
   @test_data "test/support/data/santa_monica_trees.csv"
 
@@ -53,7 +53,7 @@ defmodule PragProgTest.Ch5.AnonymousFunctions do
 
     speak = &(IO.puts(&1))
 
-    assert speak.("hi") == :ok
+    #assert speak.("hi") == :ok
   end
 
   test "Optimized &Notation for named functions" do

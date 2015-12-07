@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch5.Functions4 do
+defmodule PragProg.Ch5.Functions4 do
   use ExUnit.Case, async: true
 
   test "Currying functions" do

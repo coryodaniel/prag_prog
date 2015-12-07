@@ -1,4 +1,4 @@
-defmodule PragProgTest.Ch3.Basics do
+defmodule PragProg.Ch3.Basics do
   use ExUnit.Case, async: true
   @test_data "test/support/data/santa_monica_trees.csv"
 
