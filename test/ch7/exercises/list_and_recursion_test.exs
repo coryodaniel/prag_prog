@@ -23,5 +23,11 @@ defmodule PragProg.Ch7.ListsAndRecursion do
     assert MyList.caeser('vkkgz',5)    == 'apple'
   end
 
-  test "@pg70"
+  test "MyList.span" do
+    alias PragProg.Ch7.Exercises.MyList
+    assert MyList.span(3,3) == [3]
+    assert MyList.span(1,5) == [1,2,3,4,5]
+    assert MyList.span(5,1) == []
+    assert MyList.span(-5,1) == [-5,-4,-3,-2,-1,0,1]
+  end
 end
