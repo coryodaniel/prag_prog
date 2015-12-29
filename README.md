@@ -3,15 +3,20 @@ Just learnin' Elixir going through [Programming Elixir](https://pragprog.com/boo
 
 Trying to do the whole book w/ TDD via ExUnit to pick up ExUnit and functional testing skills while I go.
 
-## Rerun tests on change w/ guard ~> v1
-bundle exec guard
+## At chapter 8 switched to 1.2-rc1
+
+[Elixir 1.2 rc1 changelog](https://github.com/elixir-lang/elixir/blob/ef5ba3af059f76489631dc26b52ecaeff09af3fe/CHANGELOG.md#erlang-18-support)
+
+Dict, HashDict dep -> Map
+Set, HashSet dep -> MapSet
+
+## Rerun tests on change
+mix test.watch
 
 ## Running IEx.pry w/ mix tests
 
 iex -S mix test
 
-## Layout
 
-```lib/ch#/examples``` and ```test/ch#/examples``` contain in chapter examples and arbitrary exercises I come up with along the way.
 
-```lib/ch#/exercises``` and ```test/ch#/exercises``` contain "Your Turn" exercises.
+Considering -> https://github.com/josephwilk/amrita

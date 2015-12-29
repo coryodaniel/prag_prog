@@ -53,7 +53,7 @@ defmodule PragProg.Ch5.AnonymousFunctions do
 
     speak = &(IO.puts(&1))
 
-    #assert speak.("hi") == :ok
+    assert speak.("hi") == :ok
   end
 
   test "Optimized &Notation for named functions" do

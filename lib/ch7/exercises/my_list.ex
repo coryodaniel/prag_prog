@@ -18,9 +18,12 @@ defmodule PragProg.Ch7.Exercises.MyList do
   @caeser_end ?z
   @caeser_width @caeser_end - @caeser_start + 1
   def caeser([],_rot), do: []
-  def caeser([head|tail],rot \\ 0) when head + rot <= @caeser_end,
+  def caeser([head|tail],rot \\ 0)
+    when head + rot <= @caeser_end,
     do: [ head + rot | caeser(tail,rot) ]
-  def caeser([head|tail],rot) when head + rot > @caeser_end,
+
+  def caeser([head|tail],rot) 
+    when head + rot > @caeser_end,
     do: [ head + rot - @caeser_width | caeser(tail,rot) ]
 
   def span(from,from), do: [from]
