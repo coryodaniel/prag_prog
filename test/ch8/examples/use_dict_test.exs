@@ -1,4 +1,4 @@
-defmodule PragProg.Ch8.UseDict do
+defmodule PragProg.Ch8.UseDictTest do
   use ExUnit.Case, async: true
   alias PragProg.Ch8.Exercises.Sum
 

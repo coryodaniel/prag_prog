@@ -1,4 +1,4 @@
-defmodule PragProg.Ch8.BookRoom do
+defmodule PragProg.Ch8.BookRoomTest do
   use ExUnit.Case, async: true
   alias PragProg.Ch8.Exercises.HotelRoom
 
