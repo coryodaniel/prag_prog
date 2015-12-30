@@ -1,17 +1,29 @@
 defmodule PragProg.Ch10.Exercises.MyList do
-  def take(list, 0), do: []
+  def flatten(list),      do: _flatten(list, [])
+  defp _flatten([], acc), do: acc
 
+  # if you flatten the tail portion first,
+  # we dont have to do an Enum.reverse
+  defp _flatten([head|tail], acc) when is_list(head) do
+    _flatten(head, _flatten(tail,acc))
+  end
+
+  defp _flatten([head|tail], acc) do
+    [head | _flatten(tail, acc)]
+  end
+
+  def take(list, 0), do: []
   def take(list, count) when count > 0 do
     {keep, _discard} = split(list, count)
     keep
   end
 
-  def take(list,count) when count < 0 do
-    {_discard,keep} = split(list,count)
+  def take(list, count) when count < 0 do
+    {_discard, keep} = split(list, count)
     keep
   end
 
-  def split(list, count), do: _split(list,count,[])
+  def split(list, count), do: _split(list, count, [])
   defp _split(list, 0, acc), do: {acc, list}
   defp _split([], _count, acc), do: {acc,[]}
 

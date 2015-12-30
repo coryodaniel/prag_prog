@@ -32,6 +32,13 @@ defmodule PragProg.Ch10.ListsAndRecursion do
     assert MyList.all?(@list, &(&1 < 100))
   end
 
+  test "flatten" do
+    assert MyList.flatten([]) == []
+    assert MyList.flatten([1,2]) == [1,2]
+    assert MyList.flatten([1,[2,3]]) == [1,2,3]
+    assert MyList.flatten([[1], [2,3,[4]],5,[[[6]]]]) == [1,2,3,4,5,6]
+  end
+
   test "each" do
     # MyList.each('abc', fn(int) ->
     #   IO.puts(int)
