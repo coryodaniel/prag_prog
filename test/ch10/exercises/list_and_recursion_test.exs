@@ -3,8 +3,6 @@ defmodule PragProg.Ch10.ListsAndRecursion do
   alias PragProg.Ch10.Exercises.MyList
   require Integer
 
-  @list [1,2,3,4]
-
   test "take" do
     assert MyList.take([1, 2, 3], 2) == [1, 2]
     assert MyList.take([1, 2, 3], 10) == [1, 2, 3]
@@ -24,12 +22,12 @@ defmodule PragProg.Ch10.ListsAndRecursion do
 
   test "filter" do
     assert MyList.filter([1, 2, 3, 4], fn(x) -> rem(x, 2) == 0 end) == [2,4]
-    assert MyList.filter(@list, &Integer.is_even/1) == [2,4]
+    assert MyList.filter([1,2,3,4], &Integer.is_even/1) == [2,4]
   end
 
   test "all?" do
-    refute MyList.all?(@list, &Integer.is_odd/1)
-    assert MyList.all?(@list, &(&1 < 100))
+    refute MyList.all?([1,2,3,4], &Integer.is_odd/1)
+    assert MyList.all?([1,2,3,4], &(&1 < 100))
   end
 
   test "flatten" do
@@ -40,6 +38,7 @@ defmodule PragProg.Ch10.ListsAndRecursion do
   end
 
   test "each" do
+    # How do you test each?!
     # MyList.each('abc', fn(int) ->
     #   IO.puts(int)
     # end)
