@@ -44,8 +44,29 @@ defmodule PragProg.Ch11.Examples.StringsAndBinariesTest do
     assert (1 + mantissa / :math.pow(2,52)) * :math.pow(2, exp-1023) == 3.14159
   end
 
-  test "bookmark" do
-    refute "@PAGE 119: binaries & pattern matching"
+  test "binary types" do
+    _types      = [:binary, :bits, :bitstring, :bytes, :float, :integer, :utf8, :utf16, :utf32]
+    _qualifiers = [:size, :signed, :unsigned]
+    _endiannes  = [:big, :little, :native]
+
+    # Use hyphens to sep multiple attributes
+    data = "cory-8"
+    << name::bitstring-size(32), _hyphen::utf8, favnum::bytes >> = data
+
+    assert name == "cory"
+    assert favnum == "8"
+  end
+
+  def capitalize_sentences(str) do
+    token = ". "
+
+    String.split(str, token)
+      |> Enum.map(&(String.capitalize(&1)))
+      |> Enum.join(token)
+  end
+
+  test "StringsAndBinaries-6" do
+    assert capitalize_sentences("oh. a DOG. woof.") == "Oh. A dog. Woof."
   end
 
 end
