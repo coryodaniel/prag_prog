@@ -59,5 +59,9 @@ defmodule PragProg.Ch10.Comprehensions do
     assert result == ~w{h e l l o}
   end
 
-  you are at page 103
+  test "List comprehension 'into'" do
+    animal_map = for x <- ~w{ cat dog }, into: %{}, do: { x, String.upcase(x) }
+    assert animal_map["cat"] == "CAT"
+    assert animal_map["dog"] == "DOG"
+  end
 end

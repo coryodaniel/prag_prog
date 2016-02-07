@@ -1,4 +1,9 @@
 defmodule PragProg.Ch10.Exercises.MyList do
+
+  def span(from,from), do: [from]
+  def span(from,to) when from > to, do: []
+  def span(from,to) when from < to, do: [ from | span(from+1,to) ]
+
   def flatten(list),      do: _flatten(list, [])
   defp _flatten([], acc), do: acc
 

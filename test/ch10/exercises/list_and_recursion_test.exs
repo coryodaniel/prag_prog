@@ -1,6 +1,7 @@
 defmodule PragProg.Ch10.ListsAndRecursion do
   use ExUnit.Case, async: true
   alias PragProg.Ch10.Exercises.MyList
+  alias PragProg.Ch10.Exercises.Primes
   require Integer
 
   test "take" do
@@ -42,5 +43,41 @@ defmodule PragProg.Ch10.ListsAndRecursion do
     # MyList.each('abc', fn(int) ->
     #   IO.puts(int)
     # end)
+  end
+
+  test "Prime.is_prime?" do
+    assert Primes.is_prime?(5)
+    assert Primes.is_prime?(41)
+    assert Primes.is_prime?(97)
+
+    refute Primes.is_prime?(4)
+    refute Primes.is_prime?(10)
+    refute Primes.is_prime?(20)
+  end
+
+  test "ListsAndRecursion-7" do
+    assert Primes.upto(100) == [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
+  end
+
+  test "ListsAndRecursion-8" do
+    tax_rates = [ NC: 0.075, TX: 0.08 ]
+    orders = [
+      [ id: 120, ship_to: :NC, net_amount: 100.00 ],
+      [ id: 121, ship_to: :TX, net_amount:  50.00 ],
+      [ id: 122, ship_to: :OK, net_amount: 500.00 ],
+      [ id: 123, ship_to: :CA, net_amount:  20.00 ],
+      [ id: 124, ship_to: :TX, net_amount: 310.00 ],
+      [ id: 125, ship_to: :NC, net_amount:  10.00 ],
+      [ id: 126, ship_to: :OH, net_amount:  15.00 ],
+      [ id: 127, ship_to: :FL, net_amount:  25.00 ]
+    ]
+
+    orders_w_tax = for order <- orders,
+      tax_rate = tax_rates[ order[:ship_to] ] || 0,
+      total_amount = (order[:net_amount] * (1+tax_rate)),
+      do: order ++ [total_amount: total_amount]
+
+    amounts = Enum.map(orders_w_tax, &(&1[:total_amount]))
+    assert amounts == [107.5, 54.0, 500.0, 20.0, 334.8, 10.75, 15.0, 25.0]
   end
 end
