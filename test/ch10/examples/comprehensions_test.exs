@@ -1,4 +1,4 @@
-defmodule PragProg.Ch10.Comprehensions do
+defmodule PragProg.Ch10.ComprehensionsTest do
   use ExUnit.Case, async: true
   require Integer
 
