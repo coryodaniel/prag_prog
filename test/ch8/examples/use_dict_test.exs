@@ -62,7 +62,7 @@ defmodule PragProg.Ch8.UseDictTest do
     assert found_color == "blue"
   end
 
-  test "Ye old Pattern matching" do
+  test "Þe olde pattern matching" do
     sky = %{name: "sky", color: "blue"}
 
     assert %{name: _, color: _} = sky
