@@ -100,6 +100,7 @@ defmodule PragProg.Ch12.Examples.ControlFlowTest do
   end
 
   test "most methods that return :ok or :error have a bang form" do
+    # makin a little bang handler for methods that can't bang.
     assert_raise RuntimeError, fn ->
       file = ok! File.open("nope")
     end
